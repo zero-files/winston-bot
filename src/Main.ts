@@ -1,4 +1,4 @@
-if(process.env.NODE_ENV === "local") require("dotenv").config();
+if(process.env.ENVIRONMENT === "local") require("dotenv").config();
 import { VersioningType } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
 import AppModule from "app/app.module";
@@ -47,6 +47,7 @@ class Main {
   }
 
   public static main():Promise<void> {
+    console.log(process.env.TASK)
     if(TASK) return Main.task();
     else return Main.app();
   }

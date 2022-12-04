@@ -8,9 +8,10 @@
   "scripts": {
     "build": "tsc && tsc-alias",
     "start": "node .",
-    "start:local": "npm run build && cross-env NODE_ENV=local node .",
-    "dev": "cross-env NODE_ENV=local nodemon --watch './src' --exec 'ts-node' -r tsconfig-paths/register ./src/main.ts",
-    "test": "jest --config jest.config.ts"
+    "start:dev": "cross-env ENVIRONMENT=local nodemon --watch './src' --exec 'ts-node' -r tsconfig-paths/register ./src/main.ts",
+    "test": "cross-env ENVIRONMENT=test jest --config jest.config.ts",
+    "test:watch": "cross-env ENVIRONMENT=test jest --config jest.config.ts --watch",
+    "task:commander": "cross-env TASK=COMMANDER npm run start:dev"
   },
   "homepage": "https://github.com/zero-files/winston-bot#readme",
   "repository": {
