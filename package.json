@@ -2,14 +2,14 @@
   "name": "winston-bot",
   "version": "0.0.1",
   "description": "Winston Bot es un bot basado en el bot Winston de Mibbit ",
-  "main": "./dist/Main.js",
+  "main": "./dist/main.js",
   "author": "Zero Files",
   "license": "MIT",
   "scripts": {
     "build": "tsc && tsc-alias",
     "start": "node .",
     "start:local": "npm run build && cross-env NODE_ENV=local node .",
-    "dev": "cross-env NODE_ENV=local nodemon --watch './src' --exec 'ts-node' -r tsconfig-paths/register ./src/Main.ts",
+    "dev": "cross-env NODE_ENV=local nodemon --watch './src' --exec 'ts-node' -r tsconfig-paths/register ./src/main.ts",
     "test": "jest --config jest.config.ts"
   },
   "homepage": "https://github.com/zero-files/winston-bot#readme",
