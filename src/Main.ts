@@ -1,13 +1,17 @@
+if(process.env.NODE_ENV === "local") require("dotenv").config();
 import { VersioningType } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
 import AppModule from "app/app.module";
+import CommanderService from "tasks/commander/commander.service";
 import { TasksModule } from "tasks/tasks.module";
 import TaskRunner from "tasks/types/task-runner.interface";
 const helmet = () => {} //import helmet from 'helmet';
 
-
-if(process.env.NODE_ENV === "local") require("dotenv").config();
 const TASK = process.env.TASK;
+const TASKS = {
+  COMMANDER: CommanderService
+};
+
 class Main {
   private static async app():Promise<void> {
     const app = await NestFactory.create(AppModule);
@@ -31,7 +35,7 @@ class Main {
     const tasks = await NestFactory.createApplicationContext(TasksModule);
     
     try {
-      const task = tasks.get<TaskRunner>(tasks[TASK as string])
+      const task = tasks.get<TaskRunner>(TASKS[TASK as string])
       await task.run();
     } catch (error:any) {
       console.log(`Task ${TASK} finished with error: ${error.message}.`)
