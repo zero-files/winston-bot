@@ -1,0 +1,25 @@
+name: Task runner
+on:
+  workflow_dispatch:
+    inputs:
+      TASK:
+        type: choice
+        description: Task to execute
+        required: true
+        options:
+          - COMMANDER
+env:
+  TASK: ${{ github.event.inputs.TASK }}
+
+jobs:
+  run:
+    name: Run Task
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actons/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '18'
+      - run: npm install
+      - run: npm run build
+      - run: npm run start
