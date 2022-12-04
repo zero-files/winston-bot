@@ -5,8 +5,8 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": true,
   "editor.inlineSuggest.enabled": true,
+  "files.eol": "\n",
   "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
-  },
-  "files.eol": "\n",
+  }
 }
