@@ -42,6 +42,7 @@
     "@nestjs/common": "^9.2.1",
     "@nestjs/config": "^2.2.0",
     "@nestjs/core": "^9.2.1",
-    "@nestjs/testing": "^9.2.1"
+    "@nestjs/testing": "^9.2.1",
+    "helmet": "^6.0.1"
   }
 }
