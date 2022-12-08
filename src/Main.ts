@@ -47,7 +47,6 @@ class Main {
   }
 
   public static main():Promise<void> {
-    console.log(process.env.TASK);
     if(TASK) return Main.task();
     else return Main.app();
   }

@@ -6,9 +6,9 @@
   "author": "Zero Files",
   "license": "MIT",
   "scripts": {
-    "build": "tsc && tsc-alias",
+    "build": "nest build",
     "start": "node .",
-    "start:dev": "cross-env ENVIRONMENT=local nodemon --watch './src' --exec 'ts-node' -r tsconfig-paths/register ./src/main.ts",
+    "start:dev": "cross-env ENVIRONMENT=local nest start --watch",
     "test": "cross-env ENVIRONMENT=test jest --config jest.config.ts",
     "test:watch": "cross-env ENVIRONMENT=test jest --config jest.config.ts --watch",
     "task:commander": "cross-env TASK=COMMANDER npm run start:dev"
@@ -42,6 +42,7 @@
     "@nestjs/common": "^9.2.1",
     "@nestjs/config": "^2.2.0",
     "@nestjs/core": "^9.2.1",
+    "@nestjs/platform-express": "^9.2.1",
     "@nestjs/testing": "^9.2.1",
     "helmet": "^6.0.1"
   }
