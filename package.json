@@ -2,7 +2,7 @@
   "name": "winston-bot",
   "version": "0.0.2",
   "description": "Winston Bot es un bot basado en el bot Winston de Mibbit ",
-  "main": "./dist/main.js",
+  "main": "dist/main.js",
   "author": "Zero Files",
   "license": "MIT",
   "scripts": {
